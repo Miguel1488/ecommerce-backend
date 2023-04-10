@@ -1,0 +1,53 @@
+{
+    "openapi": "3.0.0",
+    "info":{  
+    "title": "Ecommerces API",
+    "description":"Una API para que puedas construir un ecommerces, de productos electronicos",
+    "versión":"1.0.0"
+},
+"paths":{
+    "/api/v1/users":{
+        "post":{
+            "tagst": ["users"],
+            "description": "con este endpoint podras crear un nuevo ususario de registro de compra",
+            "sumary": "Crea un nuevo usuario de compra en el ecommerces",
+            "requestBody":{
+                "description":"Los campos para crear un nuevo usuario son: username, email y password",
+                "require": true,
+                "content":{
+                    "aplication/json": { 
+                        "schema":{"$ref": "#/components/schemas/login"} 
+                    }
+                
+                    
+
+            }
+        }
+       
+    }
+},
+"components":{
+    "schemas":{
+        "login": {
+            "description":"La contraseña debe tener al menos 7 digitos",
+            "type":"object",
+            "properties": {
+                "username":{
+                    "type": "string",
+                    "exaple": "mike"
+                },
+                "email":{
+                    "type": "string",
+                    "example": "maespinozav@gmail.com",
+                },
+
+                "password": {
+                    "type": "string",
+                    "example": "1234567"
+                }
+                
+            }
+        }
+    }
+}
+}
